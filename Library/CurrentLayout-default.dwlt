@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Console
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -72,7 +72,7 @@ MonoBehaviour:
     y: 0
     width: 1473.6
     height: 820.8
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -145,10 +145,10 @@ MonoBehaviour:
     y: 30
     width: 1473.6
     height: 770.8
-  m_MinSize: {x: 880, y: 342}
-  m_MaxSize: {x: 16005, y: 8042}
+  m_MinSize: {x: 881, y: 342}
+  m_MaxSize: {x: 16006, y: 8042}
   vertical: 0
-  controlID: 61
+  controlID: 123
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,8 +299,8 @@ MonoBehaviour:
     y: 0
     width: 276
     height: 770.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -359,8 +359,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 883d0000
-      m_LastClickedID: 15752
+      m_SelectedIDs: 
+      m_LastClickedID: 0
       m_ExpandedIDs: 6cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -570,20 +570,20 @@ MonoBehaviour:
       y: 21
       width: 520.39996
       height: 450
-    m_Scale: {x: 0.29296875, y: 0.29296875}
-    m_Translation: {x: 260.19998, y: 225}
+    m_Scale: {x: 0.30664062, y: 0.30664062}
+    m_Translation: {x: 260.19998, y: 224.99998}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -888.1493
-      y: -768
-      width: 1776.2986
-      height: 1536
+      x: -848.55023
+      y: -733.75793
+      width: 1697.1005
+      height: 1467.5159
     m_MinimalGUI: 1
-  m_defaultScale: 0.29296875
+  m_defaultScale: 0.30664062
   m_LastWindowPixelSize: {x: 650.49994, y: 588.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -668,7 +668,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 4e3f0000
     m_LastClickedID: 16206
-    m_ExpandedIDs: 00000000cc3d000000ca9a3b
+    m_ExpandedIDs: 00000000cc3d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

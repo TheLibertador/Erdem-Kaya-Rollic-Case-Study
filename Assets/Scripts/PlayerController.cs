@@ -19,10 +19,9 @@ public class PlayerController : MonoBehaviour
             if (_touch.phase == TouchPhase.Moved)
             {
                 transform.position = new Vector3(
-                    Mathf.Clamp(transform.position.x, -clampsLimit.x, clampsLimit.x) +
-                    _touch.deltaPosition.x * touchSpeed,
-                    transform.position.y,
-                    transform.position.z + _touch.deltaPosition.y * touchSpeed);
+                    Mathf.Clamp(transform.position.x + _touch.deltaPosition.x * touchSpeed * Time.deltaTime, -clampsLimit.x, clampsLimit.x),
+                     transform.position.y,
+                    transform.position.z + _touch.deltaPosition.y * touchSpeed * Time.deltaTime);
             }
 
 

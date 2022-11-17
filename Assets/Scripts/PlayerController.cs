@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
      {
          if (other.CompareTag("Collectible"))
          {
-             other.GetComponent<Rigidbody>().AddForce(transform.position - other.GetComponent<Rigidbody>().position * 70f * Time.fixedDeltaTime);
+             other.GetComponent<Rigidbody>().AddForce(transform.position - other.GetComponent<Rigidbody>().position * 100f * Time.fixedDeltaTime);
 
          }
          

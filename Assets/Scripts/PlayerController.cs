@@ -21,11 +21,21 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector3(
                     Mathf.Clamp(transform.position.x + _touch.deltaPosition.x * touchSpeed * Time.deltaTime, -clampsLimit.x, clampsLimit.x),
                      transform.position.y,
-                    transform.position.z + _touch.deltaPosition.y * touchSpeed * Time.deltaTime);
+                    transform.position.z);
             }
 
 
 
         }
     }
+    
+     private void OnTriggerStay(Collider other)
+     {
+         if (other.CompareTag("Collectible"))
+         {
+             other.GetComponent<Rigidbody>().AddForce(transform.position - other.GetComponent<Rigidbody>().position * 70f * Time.fixedDeltaTime);
+
+         }
+         
+     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,11 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return _instance; } }
 
-    public bool gameStopped = false;
+    [NonSerialized] public bool gameStopped = true;
+    [NonSerialized] public bool gameFinished = false;
+    [NonSerialized] public bool retryLevel = false;
+
+    public int currentLevel = 0;
     
     private void Awake()
     {
@@ -18,7 +23,12 @@ public class GameManager : MonoBehaviour
         } else {
             _instance = this;
         }
+        
     }
-    
+
+    private void Start()
+    {
+        LevelManager.Instance.GenerateLevel(currentLevel);
+    }
     
 }

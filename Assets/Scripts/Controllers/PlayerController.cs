@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        Debug.Log(GameManager.Instance.gameStopped);
         if (GameManager.Instance.gameStopped != true)
         {
             transform.Translate(Vector3.up * forwardPlayerSpeed * Time.deltaTime);
@@ -34,8 +33,15 @@ public class PlayerController : MonoBehaviour
      {
          if (other.CompareTag("Collectible"))
          {
-             other.GetComponent<Rigidbody>().AddForce(transform.position - other.GetComponent<Rigidbody>().position * 1f * Time.fixedDeltaTime);
-
+             if(GameManager.Instance.gameStopped)
+             {
+                 other.GetComponent<Rigidbody>().AddForce(Vector3.forward, ForceMode.Impulse);
+             }
+             else
+             {
+                 other.GetComponent<Rigidbody>().AddForce(transform.position - other.GetComponent<Rigidbody>().position * 1f * Time.fixedDeltaTime);
+             }
+             
          }
      }
 
@@ -44,6 +50,8 @@ public class PlayerController : MonoBehaviour
          if (other.CompareTag("PlayerStopPoint"))
          {
              GameManager.Instance.gameStopped = true;
+             other.gameObject.SetActive(false);
+             StartCoroutine(CheckGameFail());
          }
 
          if (other.CompareTag("Finish"))
@@ -51,4 +59,18 @@ public class PlayerController : MonoBehaviour
              GameManager.Instance.gameFinished = true;
          }
      }
+
+     private IEnumerator CheckGameFail()
+     {
+         var checkWaitTime = GameManager.Instance.pitWaitTime + 2f;
+         yield return new WaitForSeconds(checkWaitTime);
+         if (GameManager.Instance.gameStopped)
+         {
+             GameManager.Instance.gameFinished = true;
+             UIManager.Instance.ActivateFailPanel();
+         }
+       
+     }
+
+    
 }

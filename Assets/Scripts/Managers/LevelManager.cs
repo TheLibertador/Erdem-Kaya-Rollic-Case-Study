@@ -41,8 +41,6 @@ public class LevelManager : MonoBehaviour
 
     public void GenerateLevel(int currentLevel)
     {
-        
-        Debug.Log(Levels.Count);
         if (currentLevel < Levels.Count)
         {
             GameObject instance = Instantiate(Resources.Load(String.Format("Levels/{0}", Levels[currentLevel]), typeof(GameObject))) as GameObject;

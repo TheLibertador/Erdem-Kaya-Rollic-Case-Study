@@ -769,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fe84834cc64947956273b304574e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PitThreshold: {fileID: 11400000, guid: a99d569ba0cbcb74c905e9fc4abf2513, type: 2}
 --- !u!1 &1980270553823116382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fe84834cc64947956273b304574e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PitThreshold: {fileID: 11400000, guid: 01f1a9705e2fdc04599e98eef4a2a6e8, type: 2}
 --- !u!1 &1980270554143523980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3238,6 +3240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fe84834cc64947956273b304574e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PitThreshold: {fileID: 11400000, guid: fba3a22701c078944b9ce8316b7fdf30, type: 2}
 --- !u!1 &1980270555187339347
 GameObject:
   m_ObjectHideFlags: 0

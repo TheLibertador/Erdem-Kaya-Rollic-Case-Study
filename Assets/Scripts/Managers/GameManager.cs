@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
 
     [NonSerialized] public bool gameStopped = true;
     [NonSerialized] public bool gameFinished = false;
-    [NonSerialized] public bool retryLevel = false;
     [NonSerialized] public float pitWaitTime = 1.5f;
 
     

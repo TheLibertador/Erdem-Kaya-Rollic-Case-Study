@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e408d07a1a67eeb44a3755b60496e931, type: 3}
   m_Name: FinalPit
   m_EditorClassIdentifier: 
-  ballNumForPass: 1
+  ballNumForPass: 25

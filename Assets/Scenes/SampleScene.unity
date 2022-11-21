@@ -1566,6 +1566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Levels: []
+  currentActiveLevel: {fileID: 0}
 --- !u!1 &1699332967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,6 +2162,14 @@ PrefabInstance:
     - target: {fileID: 6248143093252017701, guid: 6c21b83fa9543e643815d3a809a011ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772865898671281304, guid: 6c21b83fa9543e643815d3a809a011ac, type: 3}
+      propertyPath: touchSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772865898671281304, guid: 6c21b83fa9543e643815d3a809a011ac, type: 3}
+      propertyPath: clampsLimit.x
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 6772865898671281311, guid: 6c21b83fa9543e643815d3a809a011ac, type: 3}
       propertyPath: m_Name

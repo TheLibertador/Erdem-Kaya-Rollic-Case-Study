@@ -35,18 +35,22 @@ public class UIManager : MonoBehaviour
 
     public void OnNextLevelClicked()
     {
-        GameManager.Instance.gameStopped = false;
+        LevelManager.Instance.GenerateNextLevel(ref GameManager.Instance.currentLevel);
         levelPassedPanel.SetActive(false);
+        GameManager.Instance.gameStopped = false;
     }
 
     public void OnRetryClicked()
     {
-        GameManager.Instance.gameStopped = false;
+        LevelManager.Instance.RetryLevel();
         levelFailedPanel.SetActive(false);
+        GameManager.Instance.gameStopped = false;
     }
 
-    public void UpdateLevelIndicatorPanel(int currentLevel, int nextLevel)
+    public void UpdateLevelIndicatorPanel(int currentLevel)
     {
+        currentLevel += 1;
+        var nextLevel = currentLevel + 1;
         levelIndicatorText.text = String.Format("{0} ------> {1}", currentLevel, nextLevel);
     }
 

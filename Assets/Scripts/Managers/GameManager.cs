@@ -12,9 +12,11 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public bool gameStopped = true;
     [NonSerialized] public bool gameFinished = false;
     [NonSerialized] public bool retryLevel = false;
+    [NonSerialized] public float pitWaitTime = 1.5f;
+
+    
     public int currentLevel = 0;
 
-    [NonSerialized] public float pitWaitTime = 1.5f;
     
     private void Awake()
     {
@@ -24,12 +26,21 @@ public class GameManager : MonoBehaviour
         } else {
             _instance = this;
         }
-        
+
+        if (!PlayerPrefs.HasKey("CurrentLevel"))
+        {
+            PlayerPrefs.SetInt("CurrentLevel", 0);
+        }
+
+        currentLevel = PlayerPrefs.GetInt("CurrentLevel");
+
+
     }
 
     private void Start()
     {
         LevelManager.Instance.GenerateLevel(currentLevel);
     }
+    
     
 }

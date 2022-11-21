@@ -8,7 +8,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float forwardPlayerSpeed = 5f;
     [SerializeField] private float touchSpeed = 5f;
     [SerializeField] private Vector3 clampsLimit;
-    
+
+    private Vector3 initialPlayerPosition;
+    private Vector3 initialCameraPosition;
+
+    private void Start()
+    {
+        initialCameraPosition = GameObject.FindWithTag("MainCamera").transform.position;
+        initialPlayerPosition = this.transform.position;
+    }
+
     private void FixedUpdate()
     {
         if (GameManager.Instance.gameStopped != true)
@@ -39,7 +48,7 @@ public class PlayerController : MonoBehaviour
              }
              else
              {
-                 other.GetComponent<Rigidbody>().AddForce(transform.position - other.GetComponent<Rigidbody>().position * 1f * Time.fixedDeltaTime);
+                 other.GetComponent<Rigidbody>().AddForce(transform.position - other.GetComponent<Rigidbody>().position * 100f * Time.fixedDeltaTime);
              }
              
          }
@@ -56,7 +65,15 @@ public class PlayerController : MonoBehaviour
 
          if (other.CompareTag("Finish"))
          {
+             other.gameObject.SetActive(false);
              GameManager.Instance.gameFinished = true;
+             GameManager.Instance.gameStopped = true;
+             UIManager.Instance.ActivateSuccessPanel();
+             if (initialCameraPosition != null)
+             {
+                 GameObject.FindWithTag("MainCamera").transform.position = initialCameraPosition;
+             }
+             gameObject.transform.position = initialPlayerPosition;
          }
      }
 
@@ -64,10 +81,15 @@ public class PlayerController : MonoBehaviour
      {
          var checkWaitTime = GameManager.Instance.pitWaitTime + 2f;
          yield return new WaitForSeconds(checkWaitTime);
-         if (GameManager.Instance.gameStopped)
+         if (GameManager.Instance.gameStopped && !GameManager.Instance.gameFinished)
          {
              GameManager.Instance.gameFinished = true;
              UIManager.Instance.ActivateFailPanel();
+             if (initialCameraPosition != null)
+             {
+                 GameObject.FindWithTag("MainCamera").transform.position = initialCameraPosition;
+             }
+             gameObject.transform.position = initialPlayerPosition;
          }
        
      }
